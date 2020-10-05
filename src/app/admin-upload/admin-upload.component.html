@@ -5,60 +5,128 @@
 
 <!-------------------------------------(((Images Display Here)))----------------------------------------->
 <div style="height:500px;margin-top:100px;width:70%;height:200px;margin-left:15%;background-color:#E6E6E6;">
-  <table class="table ">
-  <thead style="background-color:#FF0040;">
-    <tr >
+ <form #listData="ngForm">
+<table class="table">
+    <thead style="background-color:#FF0040;">
+    <tr>
       <th scope="col" ><a style="color:white;" href="">Bookings</a></th>
       <th scope="col" ><a style="color:white;" href="">Upload Images and Details</a></th>
         <th scope="col" ></th>
            <th scope="col" ></th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td><input style="border-color:#E6E6E6;" type="text" name="" placeholder="heading.."></td>
-      <td><input style="border-color:#E6E6E6;" type="text" name="" placeholder="description"></td>
-      <td><input type="file" name="" placeholder=""></td>
-      <td><button type="button" class="btn btn-primary">upload</button></td>
-    </tr>
-  </tbody>
+  <tr>
+   <td>
+     <select  [(ngModel)]="category" name="category" >
+   
+   
+
+<option >rooms</option>
+    <option >experiences</option>
+    <option >restaurant</option>
+     </select>
+    </td>
+    <td>
+         <input type="text" 
+         [(ngModel)]="item" 
+         name="item"
+         placeholder="Item name..." 
+         #ctrl="ngModel" required>
+         <div *ngIf="ctrl.invalid && (ctrl.dirty || ctrl.touched)"
+         class="alert alert-danger">
+        <div *ngIf="ctrl.errors.required">
+                  Username is required
+        </div>
+    </div>
+    </td>
+    <td>
+    <div>
+    <input 
+          type="file" 
+          (change)="fileChangeEvent($event)" 
+          id="inputGroupFile01" 
+          aria-describedby="inputGroupFileAddon01">
+    </div>
+    <div style="color:red;">
+      {{  this.imageError}}
+    </div>
+    </td>
+   <td>
+  <button class="btn btn-success" [disabled] = "!listData.form.valid"  (click)="newItem()" type="button" >Add</button>
+   </td>
+  </tr>
 </table>
+</form>
 </div>
+
+
+<div style="height:500px;margin-top:100px;width:70%;height:200px;margin-left:15%;background-color:#E6E6E6;">
+    <ng-container *ngIf="valueEdit!=''"> 
+        <input text="text"
+           [(ngModel)]="this.categ " 
+           class="form-control"  
+           aria-label="Recipient's username" 
+           aria-describedby="button-addon2" 
+           placeholder="Item...">     
+    <input text="text"
+           [(ngModel)]="valueEdit" 
+           class="form-control"  
+           aria-label="Recipient's username" 
+           aria-describedby="button-addon2" 
+           placeholder="Item...">
+    <input 
+           type="file" 
+           (change)="editfileChangeEvent($event)" >
+    <br><br>
+    <button class="btn btn-primary" (click)="editItem(idEdit,this.categ ,valueEdit)">Edit</button>
+  </ng-container> 
+
+</div>
+
+
+
 <!-------------------------------------(((Images Display Here)))----------------------------------------->
-<div style="margin-top:100px;width:70%;;height:300px;margin-left:15%;">
+
+<br>
+<br>
+<div  style="margin-top:0px;width:70%;;height:250px;margin-left:15%;overflow:scroll">
     <div style="background-color:#FF0040;color:white;">
       <b>Guest Rooms</b>
     </div>
-      <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-      <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-        <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-              <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-                    <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-                          <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-                               <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-                                    <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-         <div style="background-color:#FF0040;color:white;">
+
+<div *ngFor="let categories of combined,let i =index">
+<div *ngIf="categories.cotegory=='rooms'" class="card" style="width:20%;height:20%;float:left">
+ <a (click)="removeItem(i)" type="button" > <img  [src]="categories.url"  alt="John" style="width:100%"></a>
+  <p><button class="btn btn-warning" style="width:100%;"  (click)="editItem(i,categories.cotegory,categories.item)" type="button" >edit</button></p>
+</div>
+</div>
+</div>
+  
+  
+<div  style="margin-top:0px;width:70%;;height:250px;margin-left:15%;overflow:scroll">
+    <div style="background-color:#FF0040;color:white;">
       <b>Restaurant</b>
     </div>
-      <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-      <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-        <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-              <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-                    <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-                          <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-                               <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-                                    <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">                               
-            <div style="background-color:#FF0040;color:white;">
+<div *ngFor="let categories of combined,let i =index">
+<div  *ngIf="categories.cotegory=='restaurant'" class="card" style="width:20%;height:20%;;float:left;">
+ <a (click)="removeItem(i)" type="button" > <img  [src]="categories.url"  alt="John" style="width:100%"></a>
+  <p><button class="btn btn-warning" style="width:100%;"  (click)="editItem(i,categories.cotegory,categories.item)" type="button" >edit</button></p>
+</div>
+</div>
+</div>
+
+<div  style="margin-top:0px;width:70%;;height:250px;margin-left:15%;overflow:scroll">
+      <div style="background-color:#FF0040;color:white;">
       <b>Experience</b>
     </div>
-      <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-      <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-        <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-              <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-                    <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-                          <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-                               <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">
-                                    <img  src="https://i.pinimg.com/originals/19/f9/2c/19f92c83d3f6c0d2f2ce188266bba493.jpg"  alt="..." style="width:20%;height:40%;margin-right:2%;margin-top:10px;">  
+      <div *ngFor="let categories of combined,let i =index">
+<div  *ngIf="categories.cotegory=='experiences'" class="card" style="width:20%;height:20%;;float:left">
+ <a (click)="removeItem(i)" type="button" > <img  [src]="categories.url"  alt="John" style="width:100%"></a>
+  <p><button class="btn btn-warning" style="width:100%;"  (click)="editItem(i,categories.cotegory,categories.item)" type="button" >edit</button></p>
+</div>
+</div>
+   
+ 
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!----------------------------------------------(((ENDS HERE)))--------------------------------------------------->
@@ -67,5 +135,208 @@
       <p> <a href="https://getbootstrap.com/"></a> <a href="https://twitter.com/mdo">@mdo</a>.</p>
     </div>
   </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table >
+  <tr *ngFor="let y of combined,let i =index">
+    <td ><a (click)="removeItem(i)" type="button" ><img [src]="y.url"  style="height:20%;width:20%;border-radius: 100%;text-align:center;" /></a>
+      </td>
+   <td><button class="btn btn-warning"   (click)="editItem(i,y.cotegory,y.item)" type="button" >edit</button></td>
+  </tr>
+ </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="width:40%;margin-left:30%;">
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
