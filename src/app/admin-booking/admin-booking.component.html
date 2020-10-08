@@ -1,93 +1,69 @@
+
+
+
+
 <nav class="navbar  navbar-dark fixed-top" style="background-color:#31B404;">
   <a class="navbar-brand" style="color:#0B3B0B;font-weight:bold;"  href="#">Welcome : Admin</a>
   <span style="color:white;font-size:.7em;font-weight:bold;float:right;" >LogOut</span>
 </nav>
 
 <!-------------------------------------(((Images Display Here)))----------------------------------------->
-<div style="height:500px;margin-top:100px;width:70%;height:200px;margin-left:15%;">
+<div style="height:500px;margin-top:100px;width:80%;height:200px;margin-left:5%;">
 
         
         <table >
           <tr>
-            <th>id</th>
+       
             <th>Checkin</th>
             <th>Checkout</th>
             <th>Adults</th>
             <th> Kids</th>
+            <th> Rooms</th>
+            <th> BankName</th>
+            <th> CardNumber</th>
+            <th> Cellphone</th>
+            <th> Email</th>
+              <th> ExpireDate</th>
+                  <th> VCC</th>
             </tr>
+  <tr *ngFor="let y of combined,let i =index" style="background-color:white">
+    <td>
+       {{y.checkin}}   
+    </td>
+  <td>
+        {{y.checkout}}    
+    </td>
+     <td>
+       {{y.adults}}   
+    </td>
+     <td>
+      {{y.kids}}   
+    </td>
+     <td>
+       {{y.rooms}}    
+    </td>
+      <td>
+       {{y.bankname}}    
+    </td>
+      <td>
+       {{y.cardnumber}}    
+    </td>
+        <td>
+       {{y.cellphone}}    
+    </td>
+          <td>
+       {{y.email}}    
+    </td>
+         <td>
+       {{y.expiremonth}}/{{y.expireyear}}   
+    </td>
+         <td>
+       {{y.vcc}}    
+    </td>
+          <td> <input type="submit" id="edit" value="Edit"> </td>
+             <td> <input type="submit" id="delete" value="Delete"> </td>
+    </tr>
 
-            <tr>
-            <td> 101 </td>
-            <td> 2016-12-16</td>
-            <td> 2016-12-16</td>
-            <td> 1 </td>
-            <td> 0 </td>
-            <td> <input type="submit" id="edit" value="Edit"> </td>
-             <td> <input type="submit" id="delete" value="Delete"> </td>
-            </tr>
-
-            <tr>
-              <td> 102</td>
-              <td> 2016-12-16</td>
-               <td> 2016-12-16</td>
-               <td> 1 </td>
-               <td> 0 </td>
-               <td> <input type="submit" id="edit" value="Edit"> </td>
-             <td> <input type="submit" id="delete" value="Delete"> </td>
-              </tr>
-
-               <tr>
-              <td> 103</td>
-              <td> 2016-12-16</td>
-               <td> 2016-12-16</td>
-               <td> 4 </td>
-               <td> 3 </td>
-               <td> <input type="submit" id="edit" value="Edit"> </td>
-             <td> <input type="submit" id="delete" value="Delete"> </td>
-              </tr>
-
-               <tr>
-              <td> 104</td>
-              <td> 2016-12-16</td>
-               <td> 2016-12-16</td>
-               <td> 4 </td>
-               <td> 3 </td>
-             <td> <input type="submit" id="edit" value="Edit"> </td>
-             <td> <input type="submit" id="delete" value="Delete"> </td>
-              </tr>
-            
-              <tr>
-              <td> 201</td>
-              <td> 2016-12-16</td>
-               <td> 2016-12-16</td>
-               <td> 2 </td>
-               <td> 1 </td>
-               
-             <td> <input type="submit" id="edit" value="Edit"> </td>
-             <td> <input type="submit" id="delete" value="Delete"> </td>
-              </tr>
-
-              <tr>
-              <td> 202</td>
-              <td> 2016-12-16</td>
-               <td> 2016-12-16</td>
-               <td> 6 </td>
-               <td> 5 </td>
-               <td> <input type="submit" id="edit" value="Edit"> </td>
-             <td> <input type="submit" id="delete" value="Delete"> </td>
-          
-              </tr>
-
-               <tr>
-              <td> 203</td>
-              <td> 2016-12-16</td>
-               <td> 2016-12-16</td>
-               <td> 6 </td>
-               <td> 5 </td>
-               <td> <input type="submit" id="edit" value="Edit"> </td>
-             <td> <input type="submit" id="delete" value="Delete"> </td>
-      
-              </tr>
 			  </table>
 </div>
 <!-------------------------------------(((Images Display Here)))----------------------------------------->

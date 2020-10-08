@@ -20,6 +20,9 @@ export class CardPaymentComponent implements OnInit {
     console.log(this.formData);
   }
 
-
+   cancel():void{
+          this.apiService.cancel();
+  }
+  
 }
 

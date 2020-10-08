@@ -53,7 +53,7 @@
              <select
                     [(ngModel)]="formData.expireyear"
                      name="expireyear"
-                     #expiremonth="ngModel">
+                     #expireyear="ngModel">
                     <option>2020 </option>
                     <option> 2021</option>
                     <option> 2022</option>
@@ -99,6 +99,11 @@
             type="submit" 
             class="btn btn-warning" (click)="payment()">
               Register
+          </button>
+              <button 
+            type="submit" 
+            class="btn btn-danger" (click)="cancel()">
+              Delete
           </button>
         </form>
       </div>
