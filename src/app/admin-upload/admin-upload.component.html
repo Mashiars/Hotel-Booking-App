@@ -2,15 +2,14 @@
   <a class="navbar-brand" style="color:#0B3B0B;font-weight:bold;"  href="#">Welcome : Admin</a>
   <span style="color:white;font-size:.7em;font-weight:bold;float:right;" >LogOut</span>
 </nav>
+
 <!-------------------------------------(((Images Display Here)))----------------------------------------->
-<div style="height:500px;margin-top:100px;width:70%;height:200px;margin-left:15%;background-color:#F2F3F4;">
+<div style="height:500px;margin-top:100px;width:70%;height:200px;margin-left:15%;background-color:#E6E6E6;">
  <form #listData="ngForm">
 <table class="table">
     <thead style="background-color:#FF0040;">
     <tr>
-
-
-      <th scope="col" ><a style="color:white;" [routerLink]="['/adminbookings']">Bookings</a></th>
+      <th scope="col" ><a style="color:white;" href="">Bookings</a></th>
       <th scope="col" ><a style="color:white;" href="">Upload Images and Details</a></th>
         <th scope="col" ></th>
            <th scope="col" ></th>
@@ -19,6 +18,9 @@
   <tr>
    <td>
      <select  [(ngModel)]="category" name="category" >
+   
+   
+
 <option >rooms</option>
     <option >experiences</option>
     <option >restaurant</option>
@@ -28,7 +30,7 @@
          <input type="text" 
          [(ngModel)]="item" 
          name="item"
-         placeholder="Description" 
+         placeholder="Item name..." 
          #ctrl="ngModel" required>
          <div *ngIf="ctrl.invalid && (ctrl.dirty || ctrl.touched)"
          class="alert alert-danger">
@@ -56,46 +58,35 @@
 </table>
 </form>
 </div>
-<div style="height:500px;margin-top:100px;width:70%;height:200px;margin-left:15%;background-color:#F2F3F4;">
+
+
+<div style="height:500px;margin-top:100px;width:70%;height:200px;margin-left:15%;background-color:#E6E6E6;">
     <ng-container *ngIf="valueEdit!=''"> 
-<table>
-      <thead style="background-color:#85C1E9;">
-    <tr>
-      <th scope="col" ><a style="color:white;" >Edit</a></th>
-        <th scope="col" ></th>
-           <th scope="col" ></th>
-    </tr>
-  </thead>
-  <tr>
-    <td>
-           <input text="hidden"
+        <input text="text"
            [(ngModel)]="this.categ " 
            class="form-control"  
            aria-label="Recipient's username" 
            aria-describedby="button-addon2" 
-           placeholder="Item...">  
-    </td>
-    <td>
+           placeholder="Item...">     
     <input text="text"
            [(ngModel)]="valueEdit" 
            class="form-control"  
            aria-label="Recipient's username" 
            aria-describedby="button-addon2" 
-           placeholder="Description" >
-    </td>
-    <td>
-            <input 
+           placeholder="Item...">
+    <input 
            type="file" 
            (change)="editfileChangeEvent($event)" >
-    </td>
-    <td>
-   <button class="btn btn-primary" (click)="editItem(idEdit,this.categ ,valueEdit)">Edit</button>
-    </td>
-  </tr>
-</table>
+    <br><br>
+    <button class="btn btn-primary" (click)="editItem(idEdit,this.categ ,valueEdit)">Edit</button>
   </ng-container> 
+
 </div>
+
+
+
 <!-------------------------------------(((Images Display Here)))----------------------------------------->
+
 <br>
 <br>
 <div  style="margin-top:0px;width:70%;;height:250px;margin-left:15%;overflow:scroll">
@@ -110,6 +101,8 @@
 </div>
 </div>
 </div>
+  
+  
 <div  style="margin-top:0px;width:70%;;height:250px;margin-left:15%;overflow:scroll">
     <div style="background-color:#FF0040;color:white;">
       <b>Restaurant</b>
@@ -132,13 +125,218 @@
   <p><button class="btn btn-warning" style="width:100%;"  (click)="editItem(i,categories.cotegory,categories.item)" type="button" >edit</button></p>
 </div>
 </div>
+   
+ 
 </div>
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!----------------------------------------------(((ENDS HERE)))--------------------------------------------------->
   <footer class="mastfoot mt-auto bg-dark" style="height:200px;   clear:both;">
     <div class="inner">
       <p> <a href="https://getbootstrap.com/"></a> <a href="https://twitter.com/mdo">@mdo</a>.</p>
     </div>
   </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table >
+  <tr *ngFor="let y of combined,let i =index">
+    <td ><a (click)="removeItem(i)" type="button" ><img [src]="y.url"  style="height:20%;width:20%;border-radius: 100%;text-align:center;" /></a>
+      </td>
+   <td><button class="btn btn-warning"   (click)="editItem(i,y.cotegory,y.item)" type="button" >edit</button></td>
+  </tr>
+ </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="width:40%;margin-left:30%;">
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -9,7 +9,6 @@ export class AdminUploadComponent implements OnInit {
 
 
 
-
 title = 'my-app';
 ItemList:any=[]
 ImgList:any=[]  
@@ -135,6 +134,5 @@ combined:any = []
 
   ngOnInit() {
   }
-
 
 }

@@ -7,10 +7,23 @@ import { ServiceScriptService } from '../service-script.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-ngOnInit(): void {
-throw new Error('Method not implemented.');
-}
 
+    formData:any = {}
+  constructor(private apiService: ServiceScriptService){}
+  makeBooking(){
+    this.apiService.makeBooking(this.formData)
+   // console.log(this.formData)
+   // this.displayList();
+  }
+ displayList(){
+      console.log(this.formData.checkin)
+      console.log(this.formData.checkout)
+      console.log(this.formData.kids)
+      console.log(this.formData.adults)
+      console.log(this.formData.rooms)
+ }
 
+  ngOnInit() {
+  }
 
 }

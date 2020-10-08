@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, VERSION } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceScriptService } from '../service-script.service';
+import { ServiceScriptService } from './service-script.service';
 
 @Component({
-  selector: 'app-user-booking',
-  templateUrl: './user-booking.component.html',
-  styleUrls: ['./user-booking.component.css']
+  selector: 'my-app',
+  templateUrl: './app.component.html',
+  styleUrls: [ './app.component.css' ]
 })
-export class UserBookingComponent implements OnInit {
+export class AppComponent  {
+
 
    formData:any = {}
   constructor(private apiService: ServiceScriptService,private router: Router){}
@@ -25,5 +26,7 @@ export class UserBookingComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  
 
 }
