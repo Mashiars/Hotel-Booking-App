@@ -15,7 +15,7 @@ export class AppComponent  {
   constructor(private apiService: ServiceScriptService,private router: Router){}
   makeBooking(){
   this.apiService.makeBooking(this.formData);
-  this.router.navigate(['/payment']);
+ // this.router.navigate(['/payment']);
   }
  displayList(){
       console.log(this.formData.checkin)
