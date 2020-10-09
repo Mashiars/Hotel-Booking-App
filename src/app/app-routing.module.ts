@@ -6,8 +6,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AdminBookingComponent } from './admin-booking/admin-booking.component';
 import { UserBookingComponent } from './user-booking/user-booking.component';
 import { CardPaymentComponent } from './card-payment/card-payment.component';
-
+import { OurGuestroomsComponent } from './gallaries/our-guestrooms/our-guestrooms.component';
 const routes: Routes = [
+ { path: 'guestrooms', component: OurGuestroomsComponent },
     { path: 'adminupload', component: AdminUploadComponent },
     { path: 'adminbookings', component: AdminBookingComponent },
     { path: 'home', component: HomePageComponent },

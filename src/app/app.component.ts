@@ -1,5 +1,6 @@
 import { Component, VERSION } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { ServiceScriptService } from './service-script.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ServiceScriptService } from './service-script.service';
 export class AppComponent  {
 
 
-   formData:any = {}
+    formData:any = {}
   constructor(private apiService: ServiceScriptService,private router: Router){}
   makeBooking(){
   this.apiService.makeBooking(this.formData);
@@ -26,7 +27,6 @@ export class AppComponent  {
 
   ngOnInit() {
   }
-
   
 
 }

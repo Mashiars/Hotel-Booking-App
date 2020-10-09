@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ServiceScriptService } from '../service-script.service';
 
 
@@ -9,7 +10,7 @@ import { ServiceScriptService } from '../service-script.service';
 })
 export class CardPaymentComponent implements OnInit {
 
-  constructor(private apiService: ServiceScriptService) { }
+  constructor(private apiService: ServiceScriptService,private router: Router) { }
    formData: any = {};
 
 
@@ -18,6 +19,7 @@ export class CardPaymentComponent implements OnInit {
     payment(): void {
     this.apiService.makePayment(this.formData)
     console.log(this.formData);
+      this.router.navigate(['']);
   }
 
    cancel():void{

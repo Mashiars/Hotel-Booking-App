@@ -1,38 +1,47 @@
+  <div class="bg-dark text-light p-4 " style="opacity:0.8;width:80%;margin-left:10%;text-align:center;margin-top:80px;">
 
 
 
-<div class="container">
-    <div class="row">
-      <div class="col-md-5">
-        <h1 class="page-title">User Registration</h1>
         <form>
-          <div class="form-group">
-            <label for="bank name">Bank name</label>
+
+       <table>
+        <tr>
+          <td>     
+            <div class="form-group">
+            <label for="bank name">Bank name</label><br>
            <select  [(ngModel)]="formData.bankname"
                      name="bankname"
+                     class="form-control"
                      #bankname="ngModel">
              <option>FNB</option>
              <option> Standard Bank</option>
              <option> Capitec</option>
              <option>Absa</option>
            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="cardnumber">Card number </label>
+          </div></td>
+        </tr>
+        <tr>
+         <td>
+           <div class="form-group">
+    
             <input type="number"
                    class="form-control"
                    [(ngModel)]="formData.cardnumber"
                    name="cardnumber"
                    #cardnumber="ngModel"
+                   placeholder="Card number"
                    required />
           </div>
-
-       <div class="form-group">
+         </td>
+        </tr> 
+        <tr>
+          <td>
+           <div class="form-group">
             <label for="expire month">Expire Month</label>
              <select
                     [(ngModel)]="formData.expiremonth"
                      name="expiremonth"
+                     class="form-control"
                      #expiremonth="ngModel">
                     <option>01 </option>
                     <option> 02</option>
@@ -48,11 +57,14 @@
                     <option> 12</option>
            </select>
           </div>
-           <div class="form-group">
+          </td>
+          <td>
+         <div class="form-group">
             <label for="expireyear ">Expire year</label>
              <select
                     [(ngModel)]="formData.expireyear"
                      name="expireyear"
+                     class="form-control"
                      #expireyear="ngModel">
                     <option>2020 </option>
                     <option> 2021</option>
@@ -68,44 +80,62 @@
                     <option> 2031</option>
            </select>
           </div>
-           <div class="form-group">
-            <label for="vcc">Vcc</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-group">
             <input type="number"
                    class="form-control"
                    [(ngModel)]="formData.vcc"
                    name="vcc"
                    #vcc="ngModel"
+                     placeholder="Vcc..."
                    required />
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+           <div class="form-group">
             <input type="email"
                    class="form-control"
                    [(ngModel)]="formData.email"
                    name="email"
                    #email="ngModel"
+                     placeholder="Email..."
                    required />
           </div>
-          <div class="form-group">
-            <label for="cell phone">Cell phone</label>
+          </td>
+          <td>
+            <div class="form-group">
             <input type="number"
                    class="form-control"
                    [(ngModel)]="formData.cellphone"
                    name="cellphone"
                    #cellphone="ngModel"
+                   placeholder="Celphone..."
                    required />
           </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
           <button 
             type="submit" 
             class="btn btn-warning" (click)="payment()">
               Register
           </button>
+          </td>
+          <td>
               <button 
             type="submit" 
             class="btn btn-danger" (click)="cancel()">
-              Delete
+              Cancel
           </button>
+          </td>
+        </tr>
+       </table>
         </form>
-      </div>
-    </div>
-</div>
+</div> 
+

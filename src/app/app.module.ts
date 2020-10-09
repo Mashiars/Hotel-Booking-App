@@ -10,10 +10,11 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AdminBookingComponent } from './admin-booking/admin-booking.component';
 import { CardPaymentComponent } from './card-payment/card-payment.component';
 import { UserBookingComponent } from './user-booking/user-booking.component';
+import { OurGuestroomsComponent } from './gallaries/our-guestrooms/our-guestrooms.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,AppRoutingModule ],
-  declarations: [ AppComponent, HelloComponent, AdminUploadComponent, HomePageComponent,AdminBookingComponent, CardPaymentComponent, UserBookingComponent ],
+  declarations: [ AppComponent, HelloComponent, AdminUploadComponent, HomePageComponent,AdminBookingComponent, CardPaymentComponent, UserBookingComponent, OurGuestroomsComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ServiceScriptService]
 })
