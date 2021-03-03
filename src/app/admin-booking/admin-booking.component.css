@@ -11,6 +11,8 @@ table{
 table th{
   background-color:#FF0040;
   color: white;
+   font-family:monospace;
+   font-size: 1em;
 }
 table td #edit {
   background-color:#F1C40F;
@@ -30,5 +32,9 @@ table th{
   text-align:center ;
 }
 
+#td-font{
+  font-family:monospace;
+  color:#767573;
+}
 
 

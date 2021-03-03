@@ -1,6 +1,6 @@
 <nav class="navbar  navbar-dark fixed-top" style="background-color:#31B404;">
   <a class="navbar-brand" style="color:#0B3B0B;font-weight:bold;"  href="#">Welcome : Admin</a>
-  <span style="color:white;font-size:.7em;font-weight:bold;float:right;" >LogOut</span>
+  <a (click)="logout()"><span style="color:white;font-size:.7em;font-weight:bold;float:right;"  >LogOut</span></a>
 </nav>
 <!-------------------------------------(((Images Display Here)))----------------------------------------->
 <div style="height:500px;margin-top:100px;width:70%;height:200px;margin-left:15%;background-color:#F2F3F4;">
@@ -30,12 +30,7 @@
          name="item"
          placeholder="Description" 
          #ctrl="ngModel" required>
-         <div *ngIf="ctrl.invalid && (ctrl.dirty || ctrl.touched)"
-         class="alert alert-danger">
-        <div *ngIf="ctrl.errors.required">
-                  Username is required
-        </div>
-    </div>
+   
     </td>
     <td>
     <div>
@@ -55,8 +50,6 @@
   </tr>
 </table>
 </form>
-</div>
-<div style="height:500px;margin-top:100px;width:70%;height:200px;margin-left:15%;background-color:#F2F3F4;">
     <ng-container *ngIf="valueEdit!=''"> 
 <table>
       <thead style="background-color:#85C1E9;">
@@ -95,6 +88,8 @@
 </table>
   </ng-container> 
 </div>
+
+
 <!-------------------------------------(((Images Display Here)))----------------------------------------->
 <br>
 <br>

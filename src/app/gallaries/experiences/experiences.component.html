@@ -2,7 +2,7 @@
   <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm"
   style="height:70px"
   >
-  <img src="https://mail.google.com/mail/u/0?ui=2&ik=d09dfa00ae&attid=0.1&permmsgid=msg-a:r-6961706148231076510&th=1751bafe96420799&view=att&disp=safe&realattid=f_kg67kfi20" style="width=10em;height:18em;margin-top:50px;margin-left:3%;">
+   <img src="https://mail.google.com/mail/u/0?ui=2&ik=d09dfa00ae&attid=0.1&permmsgid=msg-a:r-6961706148231076510&th=1751bafe96420799&view=att&disp=safe&realattid=f_kg67kfi20" style="width=10em;height:18em;margin-top:50px;margin-left:3%;">
     <div 
     style="background-color:#3ADF00;width:70%;height:100%;float:right;margin-top:0;  opacity: 0.7;text-align:center;">
     <nav class="my-2 my-md-2 mr-md-3" >
@@ -13,8 +13,19 @@
   </div> 
  </div>
 </main>
-<h3 style="color:#1BD912;text-align:center">GUEST ROOMS</h3>
-<div class="gallery" *ngFor="let y of defaultGuestrom,let i =index">
+ <h3 style="color:#1BD912;text-align:center">EXPERIENCES</h3>
+
+
+<div class="gallery" *ngFor="let y of defaultExper,let i =index">
+  <a target="_blank" href="y">
+    <img [src]="y" alt="Forest" style="width=10%; height=10%">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+
+
+<div class="gallery" *ngFor="let y of readDBarray,let i =index">
   <a target="_blank" href="y">
     <img [src]="y" alt="Forest" style="width=10%; height=10%">
   </a>

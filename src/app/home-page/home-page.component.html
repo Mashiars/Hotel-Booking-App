@@ -1,0 +1,301 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+	<div class="container">
+		<a class="navbar-brand js-scroll-trigger"
+			href="#page-top"><img src="assets/img/logo-removebg-preview.svg"  alt="" /></a>
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav text-uppercase ml-auto">
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:#B2BABB;font-weight: bold;"
+							href="#services">Services</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:#B2BABB;font-weight: bold;"
+							href="#portfolio">Portfolio</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:#B2BABB;font-weight: bold;"
+							href="#about">About</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:#B2BABB;font-weight: bold;"
+							href="#team">Team</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger" style="color:#B2BABB;font-weight: bold;"
+							href="#contact">Contact</a></li>
+				</ul>
+			</div>
+	</div>
+</nav>
+<!-- Masthead-->
+<!-- Masthead-->
+
+<header class="masthead" id="bgimage">
+
+	<div class="container">
+		<div class="row text-center" style=" background-image: url()">
+			<div class="col-md-12">
+				<span style="color:black;color:#5D6D7E;;font-size: 1.5em;padding-bottom: 100px;font-family: monospace;font-weight: bold;">HEY THERE !</span>
+				<div class="masthead-subheading" style="color:#5D6D7E;font-family: monospace;font-weight: bold;">I AM
+					SMUTS CHAUKE</div>
+				<div class="masthead-heading text-uppercase" style="color:black;color:#D68910">SOFTWARE DEVELOPER</div>
+				<a class="btn  btn-xl text-uppercase js-scroll-trigger" style="color:#AF601A;background-color:#F39C12"
+					href="#services">My Projects</a>
+			</div>
+
+		</div>
+
+	</div>
+</header>
+<!-- Services-->
+-------------------------------------------
+-------------------------------------------
+-------------------------------------------
+<div style="border:1px solid gray" id="backgroundImg">
+	<main role="main" class="container-fluid">
+		<div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm"
+			style="height:70px;margin-right:10%;">
+			<img
+        src="https://mail.google.com/mail/u/0?ui=2&ik=d09dfa00ae&attid=0.1&permmsgid=msg-a:r-6961706148231076510&th=1751bafe96420799&view=att&disp=safe&realattid=f_kg67kfi20"
+        style="width=10em;height:18em;margin-top:50px;margin-left:3%;"
+      />
+			<div
+				style="background-color:#3ADF00;width:70%;height:100%;float:right;margin-top:0;  opacity: 0.7;text-align:center;">
+				<nav class="my-2 my-md-2 mr-md-3">
+					<a id="links" class="p-2 " [routerLink]="['/home']"><b>GUESTROOMS</b></a>
+					<a id="links" class="p-2 " [routerLink]="['/booking']"><b>RESTAURANT</b></a>
+					<a id="links" class="p-2 " [routerLink]="['/payment']"><b>EXPERIENCES</b></a>
+					<a id="links" class="p-2 " [routerLink]="['/login']"><b>LOGIN</b></a>
+				</nav>
+			</div>
+		</div>
+	</main>
+
+	<div class="bg-dark text-light p-4 "
+		style="opacity:0.8;width:80%;margin-left:10%;text-align:center;margin-top:150px;">
+		<h1>"Welcome To GreenApple Hotel"</h1>
+	</div>
+	<div class="bg-light" style="margin-top:70px;width:80%;margin-left:10%;opacity:0.9">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<form #bookingForm="ngForm" (ngSubmit)="makeBooking()">
+						<table style="width:100%;margin-top:30px;">
+							<tr>
+								<td>
+									<div class="form-group">
+										<label>Checkin</label>
+										<input
+                      type="date"
+                      placeholder="Your Date"
+                      onfocus="(this.type='date')"
+                      onblur="(this.type='text')"
+                      name="checkin"
+                      max="3000-12-31"
+                      min="2020-01-01"
+                      class="form-control"
+                      [(ngModel)]="formData.checkin"
+                      name="checkin"
+                      #checkin="ngModel"
+                      required
+                    />
+                  </div>
+										<div *ngIf="checkin.invalid && (checkin.dirty || checkin.touched)"
+											class="alert alert-danger">
+											<div *ngIf="checkin.errors.required">
+												checkin is required
+											</div>
+										</div>
+								</td>
+								<td>
+									<div class="form-group">
+										<label>Checkout</label>
+										<input
+                      type="date"
+                      name="checkout"
+                      min="1000-01-01"
+                      max="3000-12-31"
+                      class="form-control"
+                      [(ngModel)]="formData.checkout"
+                      name="checkout"
+                      #checkout="ngModel"
+                      required
+                    />
+                  </div>
+										<div *ngIf="checkout.invalid && (checkout.dirty || checkout.touched)"
+											class="alert alert-danger">
+											<div *ngIf="checkout.errors.required">
+												checkout is required
+											</div>
+										</div>
+								</td>
+								<td>
+									<div class="form-group">
+										<label for="exampleFormControlSelect1">Adult</label>
+										<select
+                      class="form-control"
+                      name="adults"
+                      id="exampleFormControlSelect1"
+                      [(ngModel)]="formData.adults"
+                      name="adults"
+                      #adults="ngModel"
+                      required
+                    >
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+									</div>
+									<div *ngIf="adults.invalid && (adults.dirty || adults.touched)"
+										class="alert alert-danger">
+										<div *ngIf="adults.errors.required">
+											adults is required
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="form-group">
+										<label for="exampleFormControlSelect1">Children</label>
+										<select
+                      class="form-control"
+                      name="kids"
+                      id="exampleFormControlSelect1"
+                      [(ngModel)]="formData.kids"
+                      name="kids"
+                      #kids="ngModel"
+                      required
+                    >
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+									</div>
+									<div *ngIf="kids.invalid && (kids.dirty || kids.touched)"
+										class="alert alert-danger">
+										<div *ngIf="kids.errors.required">
+											kids is required
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="form-group">
+										<label for="exampleFormControlSelect1">Rooms</label>
+										<select
+                      class="form-control"
+                      name="rooms"
+                      id="exampleFormControlSelect1"
+                      [(ngModel)]="formData.rooms"
+                      name="rooms"
+                      #rooms="ngModel"
+                      required
+                    >
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+									</div>
+
+									<div *ngIf="rooms.invalid && (rooms.dirty || rooms.touched)"
+										class="alert alert-danger">
+										<div *ngIf="rooms.errors.required">
+											rooms is required
+										</div>
+									</div>
+								</td>
+
+								<td>
+									<button
+                    type="submit"
+                    style="margin-top:16px;"
+                    class="btn btn-success"
+                    [disabled]="!bookingForm.form.valid"
+                  >
+                    Register
+                  </button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-----
+
+
+        <table >
+          <tr>
+       
+            <th>Checkin</th>
+            <th>Checkout</th>
+            <th>Adults</th>
+            <th> Kids</th>
+            <th> Rooms</th>
+            <th> BankName</th>
+            <th> CardNumber</th>
+            <th> Cellphone</th>
+            <th> Email</th>
+              <th> ExpireDate</th>
+                  <th> VCC</th>
+            </tr>
+  <tr *ngFor="let y of combined,let i =index" style="background-color:white">
+    <td>
+          {{y}}  
+    </td>
+  
+    </tr>
+
+			  </table>
+
+-->
+<br />
+<br />
+<div id="gallaries">
+	<h3 style="color:#1BD912;text-align:center">VIEW GALLARY</h3>
+	<br />
+	<div class="gallery bg-light">
+		<a target="_blank" [routerLink]="['/guestrooms']">
+			<img
+        src="https://static.mansionglobal.com/production/media/article-images/8058f7c5d8cf7f9ece6b631cc0278a9d/large_March-White.jpg"
+        alt="Cinque Terre"
+      />
+    </a>
+			<div class="desc"><b>Our Guest Rooms</b></div>
+	</div>
+
+	<div class="gallery">
+		<a target="_blank" [routerLink]="['/restaurant']">
+			<img
+        src="https://cdn.primedia.co.za/primedia-broadcasting/image/upload/c_limit,fl_progressive,q_80,w_700/as8ra3vfgzbk6qe5pqob.jpg"
+        alt="Forest"
+      />
+    </a>
+			<div class="desc"><b>Our Restaurant</b></div>
+	</div>
+
+	<div class="gallery">
+		<a target="_blank" [routerLink]="['/experiences']">
+			<img
+        src="https://inm-baobab-prod-eu-west-1.s3.amazonaws.com/public/inm/media/image/iol/2018/08/29/16791489/hikes.jpeg"
+        alt="Northern Lights"
+      />
+    </a>
+			<div class="desc"><b>Experiences</b></div>
+	</div>
+</div>
+
+<footer class="mastfoot mt-auto bg-dark" style="height:200px;   clear:both;">
+	<div class="inner">
+		<p>
+			<a href="https://getbootstrap.com/"></a>
+			<a href="https://twitter.com/mdo"></a>
+		</p>
+	</div>
+</footer>
+--------------------------------------
+--------------------------------------
+-------------------------------------

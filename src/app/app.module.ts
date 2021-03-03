@@ -11,10 +11,13 @@ import { AdminBookingComponent } from './admin-booking/admin-booking.component';
 import { CardPaymentComponent } from './card-payment/card-payment.component';
 import { UserBookingComponent } from './user-booking/user-booking.component';
 import { OurGuestroomsComponent } from './gallaries/our-guestrooms/our-guestrooms.component';
+import { RestaurantComponent } from './gallaries/restaurant/restaurant.component';
+import { ExperiencesComponent } from './gallaries/experiences/experiences.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,AppRoutingModule ],
-  declarations: [ AppComponent, HelloComponent, AdminUploadComponent, HomePageComponent,AdminBookingComponent, CardPaymentComponent, UserBookingComponent, OurGuestroomsComponent ],
+  declarations: [ AppComponent, HelloComponent, AdminUploadComponent, HomePageComponent,AdminBookingComponent, CardPaymentComponent, UserBookingComponent, OurGuestroomsComponent, RestaurantComponent, ExperiencesComponent, LoginComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ServiceScriptService]
 })
