@@ -4,15 +4,15 @@
 
 <nav class="navbar  navbar-dark fixed-top" style="background-color:#31B404;">
   <a class="navbar-brand" style="color:#0B3B0B;font-weight:bold;"  href="#">Welcome : Admin</a>
-  <a (click)=" logout()"><span style="color:white;font-size:.7em;font-weight:bold;float:right;" >LogOut</span></a>
+ <a (click)=" logout()"><span style="color:white;font-size:.7em;font-weight:bold;float:right;" >LogOut</span></a> 
 </nav>
 
 <!-------------------------------------(((Images Display Here)))----------------------------------------->
-<div style="height:500px;margin-top:100px;width:90%;height:200px;margin-left:5%;">
+<br><br><br><br>
+<div style="height:500px;margin-top:100px;width:80%;height:200px;margin-left:5%;">
 
         
-      
-         <table >
+        <table >
           <tr>
        
             <th>Checkin</th>
@@ -24,46 +24,47 @@
             <th> CardNumber</th>
             <th> Cellphone</th>
             <th> Email</th>
-            <th> ExpireDate</th>
-            <th> VCC</th>
+              <th> ExpireDate</th>
+                  <th> VCC</th>
             </tr>
   <tr *ngFor="let y of combined,let i =index" style="background-color:white">
-     <td id="td-font">
+    <td>
        {{y.checkin}}   
     </td>
-  <td id="td-font">
+  <td>
         {{y.checkout}}    
     </td>
-     <td id="td-font">
+     <td>
        {{y.adults}}   
     </td>
-     <td id="td-font">
+     <td>
       {{y.kids}}   
     </td>
-     <td id="td-font">
+     <td>
        {{y.rooms}}    
     </td>
-      <td id="td-font">
+      <td>
        {{y.bankname}}    
     </td>
-      <td id="td-font">
+      <td>
        {{y.cardnumber}}    
     </td>
-        <td id="td-font">
+        <td>
        {{y.cellphone}}    
     </td>
-          <td id="td-font"> 
+          <td>
        {{y.email}}    
     </td>
-         <td id="td-font">
+         <td>
        {{y.expiremonth}}/{{y.expireyear}}   
     </td>
-         <td id="td-font">
+         <td>
        {{y.vcc}}    
     </td>
-  
-             <td> <input type="submit" id="delete" (click)="removeItem(i)" value="Delete"> </td>
-  </tr>
+          <td> <input type="submit" id="edit" value="Edit"> </td>
+             <td> <input type="submit" (click)="removeItem(i)" id="delete" value="Delete"> </td>
+    </tr>
+
 			  </table>
 </div>
 <!-------------------------------------(((Images Display Here)))----------------------------------------->

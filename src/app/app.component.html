@@ -1,1 +1,426 @@
-   <router-outlet></router-outlet>
+
+
+<app-home-page></app-home-page>
+<router-outlet>
+
+</router-outlet>  
+<app-footer></app-footer>
+ <!-- <router-outlet>
+ 
+ </router-outlet>  -->
+
+
+<!-- <header class="masthead" id="bgimage">
+
+	<div class="container">
+		<div class="row text-center" style=" background-image: url()">
+			<div class="col-md-12">
+
+				<div class="bg-dark masthead-heading text-uppercase" style="opacity:0.8;color:black;color:white">
+					Welcome To GreenApple Hotel
+				</div>
+
+			</div>
+			<div class="row text-center bg-light col-md-12">
+				<form class="col-md-12" #bookingForm="ngForm" (ngSubmit)="makeBooking()">
+
+					<div class="row text-center">
+						<div class="col-md-2">
+							<div class="form-group">
+								<label style="color:black;">Checkin</label>
+								<input
+                      type="date"
+                      placeholder="Your Date"
+                      onfocus="(this.type='date')"
+                      onblur="(this.type='text')"
+                      name="checkin"
+                      max="3000-12-31"
+                      min="2020-01-01"
+                      class="form-control"
+                      [(ngModel)]="formData.checkin"
+                      name="checkin"
+                      #checkin="ngModel"
+                      required
+                    />
+                  </div>
+								<div *ngIf="checkin.invalid && (checkin.dirty || checkin.touched)"
+									class="alert alert-danger">
+									<div *ngIf="checkin.errors.required">
+										checkin is required
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label style="color:black">Checkout</label>
+									<input
+                      type="date"
+                      name="checkout"
+                      min="1000-01-01"
+                      max="3000-12-31"
+                      class="form-control"
+                      [(ngModel)]="formData.checkout"
+                      name="checkout"
+                      #checkout="ngModel"
+                      required
+                    />
+                  </div>
+									<div *ngIf="checkout.invalid && (checkout.dirty || checkout.touched)"
+										class="alert alert-danger">
+										<div *ngIf="checkout.errors.required">
+											checkout is required
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2">
+
+									<div class="form-group">
+										<label for="exampleFormControlSelect1" style="color:black">Adult</label>
+										<select
+                      class="form-control"
+                      name="adults"
+                      id="exampleFormControlSelect1"
+                      [(ngModel)]="formData.adults"
+                      name="adults"
+                      #adults="ngModel"
+                      required
+                    >
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+									</div>
+									<div *ngIf="adults.invalid && (adults.dirty || adults.touched)"
+										class="alert alert-danger">
+										<div *ngIf="adults.errors.required">
+											adults is required
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<label style="color:black" for="exampleFormControlSelect1">Children</label>
+										<select
+                      class="form-control"
+                      name="kids"
+                      id="exampleFormControlSelect1"
+                      [(ngModel)]="formData.kids"
+                      name="kids"
+                      #kids="ngModel"
+                      required
+                    >
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+									</div>
+									<div *ngIf="kids.invalid && (kids.dirty || kids.touched)"
+										class="alert alert-danger">
+										<div *ngIf="kids.errors.required">
+											kids is required
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<label style="color:black" for="exampleFormControlSelect1">Rooms</label>
+										<select
+                      class="form-control"
+                      name="rooms"
+                      id="exampleFormControlSelect1"
+                      [(ngModel)]="formData.rooms"
+                      name="rooms"
+                      #rooms="ngModel"
+                      required
+                    >
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+									</div>
+
+									<div *ngIf="rooms.invalid && (rooms.dirty || rooms.touched)"
+										class="alert alert-danger">
+										<div *ngIf="rooms.errors.required">
+											rooms is required
+										</div>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<button style="top:45%;position:absolute;"
+
+                    type="submit"
+                    class="btn btn-success"
+                    [disabled]="!bookingForm.form.valid"
+                  >
+                    Register
+                  </button>
+								</div>
+
+							</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</header> -->
+<!-- Portfolio Grid-->
+ <!--<section class="page-section bg-light" id="portfolio">
+	<div class="container">
+		<div class="text-center">
+			<h2 class="section-heading text-uppercase">Portfolio</h2>
+			<h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+		</div>
+		<div class="row">
+
+
+
+			<div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+				<div class="portfolio-item">
+					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+						</div>
+						<img class="img-fluid"  src="https://static.mansionglobal.com/production/media/article-images/8058f7c5d8cf7f9ece6b631cc0278a9d/large_March-White.jpg" alt="" />
+                            </a>
+						<div class="portfolio-caption">
+							<div class="portfolio-caption-heading">Our Guest Rooms</div>
+
+						</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+				<div class="portfolio-item">
+					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+						</div>
+						<img class="img-fluid"  src="https://cdn.primedia.co.za/primedia-broadcasting/image/upload/c_limit,fl_progressive,q_80,w_700/as8ra3vfgzbk6qe5pqob.jpg" alt="" />
+                            </a>
+						<div class="portfolio-caption">
+							<div class="portfolio-caption-heading">Our Restaurant</div>
+
+						</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<div class="portfolio-item">
+					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+						<div class="portfolio-hover">
+							<div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+						</div>
+						<img class="img-fluid"  src="https://static.mansionglobal.com/production/media/article-images/8058f7c5d8cf7f9ece6b631cc0278a9d/large_March-White.jpg"
+        alt="Cinque Terre" alt="" />
+                            </a>
+						<div class="portfolio-caption">
+							<div class="portfolio-caption-heading">Experiences</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<footer class="mastfoot mt-auto bg-dark" style="height:200px;   clear:both;">
+	<div class="inner">
+		<p>
+			<a href="https://getbootstrap.com/"></a>
+			<a href="https://twitter.com/mdo"></a>
+		</p>
+	</div>
+</footer> -->
+
+-------------------------------------------
+--------------------------------------------
+--------------------------------------------
+-------------------------------------------
+
+
+
+
+
+
+
+<!-- 
+
+<div  style="border:1px solid gray" id="backgroundImg">
+<main role="main" class="container-fluid">
+  <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm"
+  style="height:70px"
+  >
+  <img src="https://mail.google.com/mail/u/0?ui=2&ik=d09dfa00ae&attid=0.1&permmsgid=msg-a:r1555388354183199053&th=175086a97837eb65&view=att&disp=safe&realattid=f_kg0v2kzl0" style="width:15em;height:13em;margin-top:39px">
+    <div 
+    style="background-color:#3ADF00;width:70%;height:100%;float:right;margin-top:0;  opacity: 0.7;text-align:center;">
+    <nav class="my-2 my-md-2 mr-md-3" >
+     <a id="links"  class="p-2 "  [routerLink]="['/home']"><b>GUESTROOMS</b></a>
+     <a id="links" class="p-2 " [routerLink]="['/booking']"><b>RESTAURANT</b></a>
+     <a id="links" class="p-2 " [routerLink]="['/payment']"><b>EXPERIENCES</b></a>
+  </nav>
+  </div> 
+ </div>
+</main>
+
+  <div class="bg-dark text-light p-4 " style="opacity:0.8;width:80%;margin-left:10%;text-align:center;margin-top:150px;">
+    <h1>"Welcome To GreenApple Hotel"</h1>
+ </div>
+   <div class="bg-light" style="height:200px;margin-top:70px;width:80%;margin-left:10%;opacity:0.9">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <form #bookingForm="ngForm" (ngSubmit)="makeBooking()">
+          <table style="width:100%;margin-top:30px;">
+            <tr><td>
+         <div class="form-group">
+            <label >Checkin</label>
+            <input type="date" placeholder="Your Date"
+            onfocus="(this.type='date')" onblur="(this.type='text')"
+              name="checkin" max="3000-12-31" min="2020-01-01" class="form-control" 
+            [(ngModel)]="formData.checkin"
+            name="checkin"
+            #checkin="ngModel"
+           required  >
+         </div>
+         <div *ngIf="checkin.invalid && (checkin.dirty || checkin.touched)"
+            class="alert alert-danger">
+            <div *ngIf="checkin.errors.required">
+              checkin is required
+            </div>
+          </div>
+           </td>
+          <td>
+         <div class="form-group">
+            <label >Checkout</label>
+            <input type="date" name="checkout" min="1000-01-01" max="3000-12-31" class="form-control"
+            [(ngModel)]="formData.checkout"
+            name="checkout"
+            #checkout="ngModel"
+           required  >
+         </div>
+              <div *ngIf="checkout.invalid && (checkout.dirty || checkout.touched)"
+            class="alert alert-danger">
+            <div *ngIf="checkout.errors.required">
+              checkout is required
+            </div>
+          </div>
+          </td>
+          <td>
+         <div class="form-group">
+            <label for="exampleFormControlSelect1">Adult</label>
+            <select class="form-control" name="adults" id="exampleFormControlSelect1"
+            [(ngModel)]="formData.adults"
+            name="adults"
+            #adults="ngModel"
+           required  >
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+           </select>
+         </div>
+              <div *ngIf="adults.invalid && (adults.dirty || adults.touched)"
+            class="alert alert-danger">
+            <div *ngIf="adults.errors.required">
+              adults is required
+            </div>
+          </div>
+          </td>
+          <td>
+        <div class="form-group">
+       <label for="exampleFormControlSelect1">Children</label>
+          <select class="form-control" name="kids" id="exampleFormControlSelect1"
+          [(ngModel)]="formData.kids"
+          name="kids"
+          #kids="ngModel"
+         required  >
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          </select>
+       </div>
+            <div *ngIf="kids.invalid && (kids.dirty || kids.touched)"
+            class="alert alert-danger">
+            <div *ngIf="kids.errors.required">
+              kids is required
+            </div>
+          </div>
+          </td>
+          <td>
+       <div class="form-group">  
+         <label for="exampleFormControlSelect1">Rooms</label>
+         <select class="form-control" name="rooms" id="exampleFormControlSelect1"
+         [(ngModel)]="formData.rooms"
+          name="rooms"
+          #rooms="ngModel"
+         required >
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+         </select>
+       </div>
+        
+         <div *ngIf="rooms.invalid && (rooms.dirty || rooms.touched)"
+            class="alert alert-danger">
+            <div *ngIf="rooms.errors.required">
+              rooms is required
+            </div>
+          </div>
+   </td>
+  <td style="padding-top:2%;"> 
+       <button type="submit" class="btn btn-success" [disabled] = "!bookingForm.form.valid" >
+           Register
+       </button>
+  </td>
+            </tr>
+          </table>
+       </form>
+      </div>
+    </div>
+</div>
+ </div>
+</div>
+
+<router-outlet></router-outlet>
+ <br> <br>
+<div id="gallaries">
+
+  <h3 style="color:#1BD912;text-align:center">VIEW GALLARY</h3>
+  <br>
+<div class="gallery bg-light" >
+  <a target="_blank" [routerLink]="['/guestrooms']" >
+    <img src="https://static.mansionglobal.com/production/media/article-images/8058f7c5d8cf7f9ece6b631cc0278a9d/large_March-White.jpg" alt="Cinque Terre"  >
+  </a>
+  <div class="desc" ><b>Our Guest Rooms</b></div>
+</div>
+  [routerLink]="['/our-guestrooms']" 
+<div class="gallery">
+  <a target="_blank" href="img_forest.jpg">
+    <img src="https://cdn.primedia.co.za/primedia-broadcasting/image/upload/c_limit,fl_progressive,q_80,w_700/as8ra3vfgzbk6qe5pqob.jpg" alt="Forest" >
+  </a>
+  <div class="desc"><b>Our Restaurant</b></div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="img_lights.jpg">
+    <img src="https://inm-baobab-prod-eu-west-1.s3.amazonaws.com/public/inm/media/image/iol/2018/08/29/16791489/hikes.jpeg" alt="Northern Lights" >
+  </a>
+  <div class="desc"><b>Experiences</b> </div>
+</div>
+</div>
+<footer class="mastfoot mt-auto bg-dark" style="height:200px;   clear:both;">
+    <div class="inner">
+      <p> <a href="https://getbootstrap.com/"></a> <a href="https://twitter.com/mdo"></a>.</p>
+    </div>
+  </footer> -->
+
+
+
+ 

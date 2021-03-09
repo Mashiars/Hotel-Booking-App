@@ -1,76 +1,88 @@
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="login-page">
-  <div class="form">
-    <form class="login-form">
-     <input   type="text"
-                   class="form-control"
-                   [(ngModel)]="formData.username"
-                   name="username"
-                   #username="ngModel"
-                   placeholder="username..."
-                   required />
-      <input    type="password"
-                   class="form-control"
-                   [(ngModel)]="formData.password"
-                   name="password"
-                   #password="ngModel"
-                   placeholder="password..."
-                   required />
-               <div style="color:red"><span><b>{{this.incorrectDetails }}</b></span></div>  
-      <button (click)="login()">login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
-    </form>
+    <div class="form">
+      <form class="login-form">
+       <input   type="text"
+                     class="form-control"
+                     [(ngModel)]="formData.username"
+                     name="username"
+                     #username="ngModel"
+                     placeholder="username..."
+                     required />
+        <input    type="password"
+                     class="form-control"
+                     [(ngModel)]="formData.password"
+                     name="password"
+                     #password="ngModel"
+                     placeholder="password..."
+                     required />
+                 <div style="color:red"><span><b>{{this.incorrectDetails }}</b></span></div>  
+        <button (click)="login()">login</button>
+        <p class="message">Not registered? <a href="#">Create an account</a></p>
+      </form>
+    </div>
   </div>
-</div>
-
-        <table >
-          <tr>
-       
-            <th>Checkin</th>
-            <th>Checkout</th>
-            <th>Adults</th>
-            <th> Kids</th>
-            <th> Rooms</th>
-            <th> BankName</th>
-            <th> CardNumber</th>
-            <th> Cellphone</th>
-            <th> Email</th>
-              <th> ExpireDate</th>
-                  <th> VCC</th>
-            </tr>
-  <tr *ngFor="let y of combined,let i =index" style="background-color:white">
-     <td>
-       {{y.checkin}}   
-    </td>
-  <td>
-        {{y.checkout}}    
-    </td>
-     <td>
-       {{y.adults}}   
-    </td>
-     <td>
-      {{y.kids}}   
-    </td>
-     <td>
-       {{y.rooms}}    
-    </td>
-      <td>
-       {{y.bankname}}    
-    </td>
-      <td>
-       {{y.cardnumber}}    
-    </td>
+<!--   
+          <table >
+            <tr>
+         
+              <th>Checkin</th>
+              <th>Checkout</th>
+              <th>Adults</th>
+              <th> Kids</th>
+              <th> Rooms</th>
+              <th> BankName</th>
+              <th> CardNumber</th>
+              <th> Cellphone</th>
+              <th> Email</th>
+                <th> ExpireDate</th>
+                    <th> VCC</th>
+              </tr>
+    <tr *ngFor="let y of combined,let i =index" style="background-color:white">
+       <td>
+         {{y.checkin}}   
+      </td>
+    <td>
+          {{y.checkout}}    
+      </td>
+       <td>
+         {{y.adults}}   
+      </td>
+       <td>
+        {{y.kids}}   
+      </td>
+       <td>
+         {{y.rooms}}    
+      </td>
         <td>
-       {{y.cellphone}}    
-    </td>
+         {{y.bankname}}    
+      </td>
+        <td>
+         {{y.cardnumber}}    
+      </td>
           <td>
-       {{y.email}}    
-    </td>
-         <td>
-       {{y.expiremonth}}/{{y.expireyear}}   
-    </td>
-         <td>
-       {{y.vcc}}    
-    </td>
-			  </table>
+         {{y.cellphone}}    
+      </td>
+            <td>
+         {{y.email}}    
+      </td>
+           <td>
+         {{y.expiremonth}}/{{y.expireyear}}   
+      </td>
+           <td>
+         {{y.vcc}}    
+      </td>
+      </tr> 
+                </table>-->
+
+                
+<br>
+<br>
+<br>
+<br>
+<br>

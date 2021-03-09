@@ -1,22 +1,40 @@
-<main role="main" class="container-fluid">
-  <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm"
-  style="height:70px"
-  >
-  <img src="https://mail.google.com/mail/u/0?ui=2&ik=d09dfa00ae&attid=0.1&permmsgid=msg-a:r-6961706148231076510&th=1751bafe96420799&view=att&disp=safe&realattid=f_kg67kfi20" style="width=10em;height:18em;margin-top:50px;margin-left:3%;">
-    <div 
-    style="background-color:#3ADF00;width:70%;height:100%;float:right;margin-top:0;  opacity: 0.7;text-align:center;">
-    <nav class="my-2 my-md-2 mr-md-3" >
-     <a id="links"  class="p-2 "  [routerLink]="['/home']"><b>GUESTROOMS</b></a>
-     <a id="links" class="p-2 " [routerLink]="['/booking']"><b>RESTAURANT</b></a>
-     <a id="links" class="p-2 " [routerLink]="['/payment']"><b>EXPERIENCES</b></a>
-  </nav>
-  </div> 
- </div>
-</main>
-<h3 style="color:#1BD912;text-align:center">GUEST ROOMS</h3>
-<div class="gallery" *ngFor="let y of defaultGuestrom,let i =index">
-  <a target="_blank" href="y">
-    <img [src]="y" alt="Forest" style="width=10%; height=10%">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
+<br>
+<br>
+<br>
+
+<!-- Portfolio Grid-->
+<section class="page-section bg-light" id="portfolio">
+  <div class="container">
+      <div class="text-center">
+          <h2 style="color:#1BD912;" class="section-heading text-uppercase">GUEST ROOMS</h2>
+      </div>
+      <div class="row">
+         
+
+
+
+
+
+
+          <div class="col-lg-4 col-sm-6 mb-4"  *ngFor="let y of defaultGuestrom,let i =index">
+            <div class="portfolio-item">
+                <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                    </div>
+                    <img class="img-fluid" [src]="y" alt="" />
+                </a>
+                <!-- <div class="portfolio-caption">
+                    <div class="portfolio-caption-heading">Finish</div>
+                    <div class="portfolio-caption-subheading text-muted">Identity</div>
+                </div> -->
+            </div>
+        </div>
+
+
+
+
+      </div>
+  </div>
+</section>
+
