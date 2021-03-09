@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ServiceScriptService } from '../service-script.service';
 
 @Component({
   selector: 'app-admin-upload',
@@ -29,19 +27,17 @@ cardImageBase64: string;
 arrImg:any = []
 combined:any = []
 
-  constructor( private apiService: ServiceScriptService,private router: Router){
-
-  } 
+  constructor(){} 
 
   newItem(){
 
     if( this.isImageSaved == true){
         this.status = true;
         this.objItem1=this.item;
+        
         this.item = "";
-
-       this.combined = this.apiService.newItemDB({url:this.cardImageBase64},{item:this.objItem1},{cotegory:this.category})
-
+        this.combined.push(Object.assign({url:this.cardImageBase64},{item:this.objItem1},{cotegory:this.category})) 
+        console.log(this.combined)
      }
    }
   
@@ -50,21 +46,15 @@ combined:any = []
     this.categ = categId;
     this.valueEdit = value;
     if(this.EditIsImageSaved==true){
-       this.apiService.editItemDB(id,categId,value,this.cardImageBase64)
+      for(let x = 0;x<=this.combined.length-1;x++){
+        if(this.combined[this.idEdit]==this.combined[x])
+         {
+           this.combined[x]=Object.assign({url:this.cardImageBase64},{item:this.valueEdit},{cotegory:this.categ})
+           this.cardImageBase64=""
+         }
+        console.log( this.combined[x])  }
     }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
+  }
   editfileChangeEvent(editFileInput: any){
     const reader = new FileReader();
         reader.onload = (e:any)=>{
@@ -121,37 +111,30 @@ combined:any = []
         reader.readAsDataURL(fileInput.target.files[0])
     }
   }
-
-
-
-
-
-
-
   removeImage(removeID){
-  this.apiService.removeImageDB(removeID)
+    for(let k = 0;k<=this.arrImg.length-1;k++){
+      if(this.arrImg[removeID]==this.arrImg[k]){
+         let temp = this.arrImg[k];
+         this.arrImg[temp] = this.arrImg[k+1];
+         this.arrImg[k] = this.arrImg[temp];
+         -- this.arrImg.length
+      }
+    }
   }
   removeItem(removeID){
-  this.apiService.  removeItemDB(removeID)
-
+    for(let k = 0;k<=this.combined.length-1;k++){
+      if(this.combined[removeID]==this.combined[k]){
+         let temp = this.combined[k];
+         this.combined[temp] = this.combined[k+1];
+         this.combined[k] = this.combined[temp];
+         -- this.combined.length
+      }
+    }
   }
-logout(){
-     this.router.navigate(['']);
-}
-
-
-
-
-
-
-
-
-
-
 
 
   ngOnInit() {
   }
-
+  
 
 }

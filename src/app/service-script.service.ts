@@ -17,9 +17,11 @@ export class ServiceScriptService {
     valueEdit = {};
     img="";
     arrImg:any = []
+  loggedin: boolean=false;
+  incorrectDetails: string;
 
 
- constructor() { }
+ constructor(private router: Router) { }
   makeBooking(obj){
         this.bookings=(obj)
           obj="";
@@ -36,11 +38,11 @@ export class ServiceScriptService {
    return this.combined;
   }
    cancel(){
-     /*
-  var i = this.combined.length-1;
-  this.combined[i] 
-  --i;
-   return this.combined;*/
+     
+  // var i = this.combined.length-1;
+  // this.combined[i] 
+  // --i;
+  //  return this.combined;
   }
 
 /***********************************ADMIN SECTION********************************************/
@@ -102,8 +104,25 @@ getImageCatagoriy(){
   return this.combinedz;
 }
 
-
-
-
+loginUser(username,password){
+ 
+   const adminUser = "admin";
+   const adminPass = "12345";
+    if(adminUser==username && adminPass==password){
+      this.loggedin=true;
+        this.router.navigate(['/adminupload']);
+    }else{
+          this.incorrectDetails = "User doesnt Exist!";
+    }
+    
+}
+getCurrentUser(){
+  return this.loggedin;
+}
+logOut(){
+  this.loggedin=false;
+  return this.loggedin;
+ 
+}
 
 }
